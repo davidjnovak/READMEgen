@@ -6,7 +6,7 @@ from bs4 import BeautifulSoup
 import re
 openai.api_key = os.getenv("OPENAI_API_KEY")
 
-issue_url = 'https://github.com/Jonathan-Zollinger/eDirectory-Compose/issues/1'
+issue_url = '<YOUR ISSUE URL>'
 pattern = r'(https://github.com/[^/]+/[^/]+)/.*'
 match = re.search(pattern, issue_url)
 
@@ -19,7 +19,7 @@ response = requests.get(issue_url)
 soup = BeautifulSoup(response.content, 'lxml')
 issue_description = soup.find(class_='markdown-body').get_text()
 # Define the GitHub file URL
-url = 'https://github.com/Jonathan-Zollinger/eDirectory-Compose/blob/main/src/eDir_utils.sh'
+url = '<YOUR FILE URL>'
 print(url)
 response = requests.get(url)
 
